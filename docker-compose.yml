@@ -1,0 +1,16 @@
+version: '3.0'
+
+volumes:
+  node-modules:
+    driver: local
+
+services:
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    tty: true
+    volumes:
+      - .:/usr/src/app
+      - node-modules:/usr/src/app/node_modules
+ 
